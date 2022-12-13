@@ -68,17 +68,20 @@ pageEncoding="windows-1256"%>
                           <input type="text" name="name" class="form-control car"><br>
                           <label class="form-label">prix :</label>
                           <input type="Number" name="price" class="form-control car"><br>
-                          
                           <label class="form-label">Categorie</label>
                           <select name="category">
                                <c:forEach items="${categorie}" var="x">
                                    <option value="${x.id}">"${x.name}"</option>
                                 </c:forEach>
                           </select>
-                             <input type="submit" name="action" value="ajouter"class="btn btn-success">
+                            <br>
+                          <input type="submit" name="action" value="ajouter"class="btn btn-success">
                           
                       </div>
                 </form>
+         </div>
+         <div>
+             <a href="category-list">consulter liste categories</a>
          </div>
     </div>
 
