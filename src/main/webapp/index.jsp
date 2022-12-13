@@ -13,7 +13,7 @@ pageEncoding="windows-1256"%>
 <p></p>
     
      <div class="container">
-          <div class="card">
+         <%--<div class="card">
                  <div class="card text-white bg-dark">
                  <div class="card-header">
                       Recherche des Produits
@@ -28,7 +28,7 @@ pageEncoding="windows-1256"%>
                        </div>
                  </form>
             </div>
-          <%-- <c:if test="${LV==false }">--%>
+           <c:if test="${LV==false }">--%>
               
                 <table class="table table-striped" style="width:1000px">
                       <tr>
@@ -41,7 +41,10 @@ pageEncoding="windows-1256"%>
                              <td>${p.name}</td>
                              <td>${p.price}</td>
                              <td>${p.category.name}</td>
-                             <td><a href="delete?id=${p.id}"class="btn btn-danger">Supprimer</a></td>
+                             <td>
+                                 <a href="delete-product?id=${p.id}"class="btn btn-danger">Supprimer</a>
+                                 <a href="edit-products?id=${p.id}"class="btn btn-success">Modifer</a>
+                             </td>
                              
                          </tr>
                       </c:forEach>
@@ -57,14 +60,14 @@ pageEncoding="windows-1256"%>
                         Ajouter un produit
                     </div>
                    </div>
-               <form action="add" method="post">
+               <form action="add-product" method="post">
                
                     <div class="form-group">
                     
                           <label class="form-label">nom :</label>
                           <input type="text" name="name" class="form-control car"><br>
                           <label class="form-label">prix :</label>
-                          <input type="Number"name="price" class="form-control car"><br>
+                          <input type="Number" name="price" class="form-control car"><br>
                           
                           <label class="form-label">Categorie</label>
                           <select name="category">

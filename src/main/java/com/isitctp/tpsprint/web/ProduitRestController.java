@@ -18,6 +18,11 @@ public class ProduitRestController {
         return pr.findAll();
     }
 
+    @GetMapping(path="/delete")
+    void deleteProducts(@RequestParam Long id) {
+        pr.deleteById(id);
+    }
+
     @PostMapping(path="/produits")
     void addProduct(@RequestBody Produit p) {
         pr.save(p);
@@ -27,7 +32,7 @@ public class ProduitRestController {
     void updateProduct(@RequestParam Long id, @RequestBody Produit x){
         Produit p = pr.findById(id).get();
         p.setName(x.getName());
-        p.setName(x.getName());
+        p.setPrice(x.getPrice());
         pr.save(p);
     }
 
